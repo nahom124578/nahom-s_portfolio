@@ -4,6 +4,7 @@ const Home = () =>{
     return (
         <div>
             my portfolio
+            NAHOM MITIKU
         </div>
 
     )
