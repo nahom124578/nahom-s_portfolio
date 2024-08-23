@@ -11,7 +11,7 @@ const Navbar = () => {
                 <div className="flex space-x-500">
                     <Link
                         to="/"
-                        className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700"
+                        className="bg-gray-600 text-green-700 px-4 py-2 rounded hover:bg-gray-700"
                     >
                         Home
                     </Link>
