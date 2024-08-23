@@ -3,31 +3,37 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <nav className="bg-gray-800 p-4">
+        <nav className="p-4 bg-gray-400">
             <div className="container mx-auto flex justify-between items-center">
                 <div className="text-white text-2xl font-bold">
                     My Portfolio
                 </div>
-                <ul className="flex space-x-4">
-                    
-                        <Link to="/" className="text-white hover:text-gray-400">
-                            Home
-                        </Link>
-                    
-                    
-                        <Link to="/resume" className="text-white hover:text-gray-400">
-                            Resume
-                        </Link>
-                    
-                        <Link to="/projects" className="text-white hover:text-gray-400">
-                            Projects
-                        </Link>
-                    
-                        <Link to="/contact" className="text-white hover:text-gray-400">
-                            Contact
-                        </Link>
-                   
-                </ul>
+                <div className="flex space-x-500">
+                    <Link
+                        to="/"
+                        className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700"
+                    >
+                        Home
+                    </Link>
+                    <Link
+                        to="/resume"
+                        className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700"
+                    >
+                        Resume
+                    </Link>
+                    <Link
+                        to="/projects"
+                        className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700"
+                    >
+                        Projects
+                    </Link>
+                    <Link
+                        to="/contact"
+                        className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700"
+                    >
+                        Contact
+                    </Link>
+                </div>
             </div>
         </nav>
     );
