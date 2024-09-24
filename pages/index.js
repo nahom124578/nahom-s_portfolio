@@ -86,7 +86,7 @@ export default function Home() {
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
               <Image src={code} width={100} height={100} alt="Code Icon" />
               <h3 className="text-lg font-medium pt-8 pb-2">Backend & Database</h3>
-              <p className="py-2">Do you have an idea for your next great website? Let's make it a reality.</p>
+              <p className="py-2">Do you have an idea for your next great website? Let&apos;s make it a reality.</p>
               <h4 className="py-4 text-teal-600">Tools I Use</h4>
               <p className="text-gray-800 py-1">Node.js</p>
               <p className="text-gray-800 py-1">GoLang</p>
