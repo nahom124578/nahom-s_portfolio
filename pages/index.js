@@ -145,6 +145,7 @@ export default function Home() {
 
             {/* Project 3 */}
             <div className="basis-1/3 flex-1">
+            <h3 className="text-3xl py-1 dark:text-white">packet sniffing</h3>
               <Link href="https://github.com/nahom124578/packet-sniffing.git">
                 <Image
                   className="rounded-lg object-cover"
