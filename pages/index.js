@@ -132,7 +132,7 @@ export default function Home() {
 
             {/* Project 2 */}
             <div className="basis-1/3 flex-1">
-            <h3 className="text-3xl py-1 dark:text-white">Ecommerce(cloth & shoes)</h3>
+            <h3 className="text-3xl py-1 dark:text-white">Ecommerce for cloth & shoes</h3>
               <Link href="https://github.com/DB-SQL-PROJECT/DB-SQL.git">
                 <Image
                   className="rounded-lg object-cover"
