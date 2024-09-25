@@ -119,7 +119,7 @@ export default function Home() {
             {/* Project 1 */}
             <div className="basis-1/3 flex-1">
             
-            <h3 className="text-3xl py-1 dark:text-white">Hospital management system</h3>
+            <h3 className="text-3xl py-1 dark:text-white">Hospital Management System</h3>
               <Link href="https://github.com/nahom124578/mygit.git">
                 <Image
                   className="rounded-lg object-cover"
@@ -145,7 +145,7 @@ export default function Home() {
 
             {/* Project 3 */}
             <div className="basis-1/3 flex-1">
-            <h3 className="text-3xl py-1 dark:text-white">packet sniffing</h3>
+            <h3 className="text-3xl py-1 dark:text-white">Packet Sniffing</h3>
               <Link href="https://github.com/nahom124578/packet-sniffing.git">
                 <Image
                   className="rounded-lg object-cover"
@@ -158,6 +158,7 @@ export default function Home() {
 
             {/* Project 4 */}
             <div className="basis-1/3 flex-1">
+            <h3 className="text-3xl py-1 dark:text-white">CPU design proteus</h3>
               <Link href="https://github.com/yourusername/project4">
                 <Image
                   className="rounded-lg object-cover"
@@ -170,6 +171,8 @@ export default function Home() {
 
             {/* Project 5 */}
             <div className="basis-1/3 flex-1">
+            <h3 className="text-3xl py-1 dark:text-white">Ecommerce
+            </h3>
               <Link href="https://github.com/ABHKNY-Summer-Projects/ECommerce_Website.git">
                 <Image
                   className="rounded-lg object-cover"
@@ -182,6 +185,7 @@ export default function Home() {
 
             {/* Project 6 */}
             <div className="basis-1/3 flex-1">
+            <h3 className="text-3xl py-1 dark:text-white">This Portfolio</h3>
               <Link href="https://github.com/nahom124578/MyPortfolio.git">
                 <Image
                   className="rounded-lg object-cover"
