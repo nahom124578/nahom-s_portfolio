@@ -101,7 +101,7 @@ export default function Home() {
               <p className="text-gray-800 py-1">Proteus</p>
               <p className="text-gray-800 py-1">Matlab</p>
               <p className="text-gray-800 py-1">Packet Tracer</p>
-              <p className="text-gray-800 py-1"></p>
+              <p className="text-gray-800 py-1">arduno</p>
             </div>
           </div>
         </section>
