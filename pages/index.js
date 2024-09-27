@@ -117,7 +117,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
             {/* Project 1 */}
-            <div className="basis-1/3 flex-1">
+            <div className="basis-1/3 flex-1 transition">
             
             <h3 className="text-3xl py-1 dark:text-white">Hospital Management System</h3>
               <Link href="https://github.com/nahom124578/mygit.git">
