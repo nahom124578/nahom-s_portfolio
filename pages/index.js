@@ -117,12 +117,12 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
             {/* Project 1 */}
-            <div className="basis-1/3 flex-1 transition-transform">
+            <div className="basis-1/3 flex-1 ">
             
             <h3 className="text-3xl py-1 dark:text-white">Hospital Management System</h3>
               <Link href="https://github.com/nahom124578/mygit.git">
-                <Image
-                  className="rounded-lg object-cover"
+                <Image 
+                  className="rounded-lg object-cover transition-shadow"
                   layout="responsive"
                   src={web1}
                   alt="Project 1"
