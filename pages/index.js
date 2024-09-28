@@ -119,12 +119,14 @@ export default function Home() {
   {/* Project 1 */}
   <div className="basis-1/3 flex-1 relative group">
     <h3 className="text-3xl py-1 dark:text-white">Hospital Management System</h3>
-    <Image
-      className="rounded-lg object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-      layout="responsive"
-      src={web1}
-      alt="Project 1"
-    />
+    <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg"> {/* 16:9 aspect ratio */}
+      <Image
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+        layout="fill"
+        src={web1}
+        alt="Project 1"
+      />
+    </div>
     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
       <div className="flex space-x-4">
         <Link href="https://github.com/nahom124578/mygit.git">
@@ -144,12 +146,14 @@ export default function Home() {
   {/* Project 2 */}
   <div className="basis-1/3 flex-1 relative group">
     <h3 className="text-3xl py-1 dark:text-white">Ecommerce for Cloth & Shoes</h3>
-    <Image
-      className="rounded-lg object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-      layout="responsive"
-      src={web2}
-      alt="Project 2"
-    />
+    <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
+      <Image
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+        layout="fill"
+        src={web2}
+        alt="Project 2"
+      />
+    </div>
     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
       <div className="flex space-x-4">
         <Link href="https://github.com/DB-SQL-PROJECT/DB-SQL.git">
@@ -169,12 +173,14 @@ export default function Home() {
   {/* Project 3 */}
   <div className="basis-1/3 flex-1 relative group">
     <h3 className="text-3xl py-1 dark:text-white">Packet Sniffing</h3>
-    <Image
-      className="rounded-lg object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-      layout="responsive"
-      src={web3}
-      alt="Project 3"
-    />
+    <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
+      <Image
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+        layout="fill"
+        src={web3}
+        alt="Project 3"
+      />
+    </div>
     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
       <div className="flex space-x-4">
         <Link href="https://github.com/nahom124578/packet-sniffing.git">
@@ -194,12 +200,14 @@ export default function Home() {
   {/* Project 4 */}
   <div className="basis-1/3 flex-1 relative group">
     <h3 className="text-3xl py-1 dark:text-white">CPU Design in Proteus</h3>
-    <Image
-      className="rounded-lg object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-      layout="responsive"
-      src={web4}
-      alt="Project 4"
-    />
+    <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
+      <Image
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+        layout="fill"
+        src={web4}
+        alt="Project 4"
+      />
+    </div>
     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
       <div className="flex space-x-4">
         <Link href="https://github.com/yourusername/project4">
@@ -219,12 +227,14 @@ export default function Home() {
   {/* Project 5 */}
   <div className="basis-1/3 flex-1 relative group">
     <h3 className="text-3xl py-1 dark:text-white">Ecommerce</h3>
-    <Image
-      className="rounded-lg object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-      layout="responsive"
-      src={web5}
-      alt="Project 5"
-    />
+    <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
+      <Image
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+        layout="fill"
+        src={web5}
+        alt="Project 5"
+      />
+    </div>
     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
       <div className="flex space-x-4">
         <Link href="https://github.com/ABHKNY-Summer-Projects/ECommerce_Website.git">
@@ -244,12 +254,14 @@ export default function Home() {
   {/* Project 6 */}
   <div className="basis-1/3 flex-1 relative group">
     <h3 className="text-3xl py-1 dark:text-white">This Portfolio</h3>
-    <Image
-      className="rounded-lg object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-      layout="responsive"
-      src={web6}
-      alt="Project 6"
-    />
+    <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
+      <Image
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+        layout="fill"
+        src={web6}
+        alt="Project 6"
+      />
+    </div>
     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
       <div className="flex space-x-4">
         <Link href="https://github.com/nahom124578/MyPortfolio.git">
@@ -266,6 +278,7 @@ export default function Home() {
     </div>
   </div>
 </div>
+
 
         </section>
       </main>
