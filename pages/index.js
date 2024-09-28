@@ -4,12 +4,15 @@ import {
   AiFillTwitterCircle,
   AiFillLinkedin,
   AiFillYoutube,
+  AiFillTelegram,
 } from "react-icons/ai";
 import Link from "next/link";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState } from "react";
-import emailjs from "emailjs-com";
 import deved from "../public/dev-ed-wave.jpg";
+import code from "../public/code.png";
+import design from "../public/design.png";
+import consulting from "../public/consulting.png";
 import Image from "next/image";
 import web1 from "../public/system-accessed-by-doctors-fingerprint-260nw-2291512001.webp";
 import web2 from "../public/eee.jpg";
@@ -17,31 +20,30 @@ import web3 from "../public/sddefault.jpg";
 import web4 from "../public/2066861_96b5_7.jpg";
 import web5 from "../public/ecom.webp";
 import web6 from "../public/port.png";
+import emailjs from "emailjs-com";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true); // Dark mode default to true
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
 
-  // Contact form submission handler
-  const sendEmail = (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS Service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS Template ID
-        e.target,
-        "YOUR_USER_ID" // Replace with your EmailJS User ID
-      )
-      .then(
-        (result) => {
-          alert("Message sent successfully!");
-        },
-        (error) => {
-          alert("Failed to send the message, please try again.");
-        }
-      );
-
-    e.target.reset();
+    emailjs.sendForm('service_lk1lnx2', 'template_your_template_id', e.target, 'user_your_user_id')
+      .then((result) => {
+          alert("Message sent!");
+          setFormData({ name: '', email: '', message: '' }); // Reset form
+      }, (error) => {
+          alert("Error sending message: ", error.text);
+      });
   };
 
   return (
@@ -79,7 +81,7 @@ export default function Home() {
               Computer and Electrical Engineer.
             </h3>
             <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
-              An Electrical and Computer Engineer with a passion for both hardware and software. I specialize in building full-stack web applications, embedded systems, and CPU design.
+              An Electrical and Computer Engineer with a deep passion for both hardware and software. I specialize in building full-stack web applications alongside embedded systems and CPU design. With a strong focus on creating scalable, efficient web solutions, I seamlessly integrate my skills across the entire development process—from front-end user interfaces to back-end architecture.
             </p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
               <AiFillTwitterCircle />
@@ -91,155 +93,214 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Projects Section */}
-        <section className="py-10">
-          <h3 className="text-3xl py-1 dark:text-white">Projects</h3>
-          <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-            I have worked on a variety of projects, from embedded systems to web applications. Below are some of my notable works.
-          </p>
-          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            {/* Project 1 */}
-            <div className="basis-1/3 flex-1">
-              <Link href="https://github.com/nahommit/cpu-project">
-                <Image
-                  className="rounded-lg object-cover"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  src={web1}
-                  alt="Project 1"
-                />
-              </Link>
+        <section>
+          <div className="lg:flex gap-10">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
+              <Image src={design} width={100} height={100} alt="Design Icon" />
+              <h3 className="text-lg font-medium pt-8 pb-2">Frontend</h3>
+              <p className="py-2">Creating elegant web pages.</p>
+              <h4 className="py-4 text-teal-600">Tools I Use</h4>
+              <p className="text-gray-800 py-1">Figma</p>
+              <p className="text-gray-800 py-1">React.js</p>
+              <p className="text-gray-800 py-1">Vue.js</p>
+              <p className="text-gray-800 py-1">Next.js</p>
             </div>
-            {/* Project 2 */}
-            <div className="basis-1/3 flex-1">
-              <Link href="https://github.com/nahommit/embedded-systems-project">
-                <Image
-                  className="rounded-lg object-cover"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  src={web2}
-                  alt="Project 2"
-                />
-              </Link>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
+              <Image src={code} width={100} height={100} alt="Code Icon" />
+              <h3 className="text-lg font-medium pt-8 pb-2">Backend & Database</h3>
+              <p className="py-2">Do you have an idea for your next great website? Let&apos;s make it a reality.</p>
+              <h4 className="py-4 text-teal-600">Tools I Use</h4>
+              <p className="text-gray-800 py-1">Node.js</p>
+              <p className="text-gray-800 py-1">GoLang</p>
+              <p className="text-gray-800 py-1">MongoDB</p>
+              <p className="text-gray-800 py-1">PostgreSQL</p>
             </div>
-            {/* Project 3 */}
-            <div className="basis-1/3 flex-1">
-              <Link href="https://github.com/nahommit/security-project">
-                <Image
-                  className="rounded-lg object-cover"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  src={web3}
-                  alt="Project 3"
-                />
-              </Link>
-            </div>
-            {/* Project 4 */}
-            <div className="basis-1/3 flex-1">
-              <Link href="https://github.com/nahommit/e-commerce-app">
-                <Image
-                  className="rounded-lg object-cover"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  src={web4}
-                  alt="Project 4"
-                />
-              </Link>
-            </div>
-            {/* Project 5 */}
-            <div className="basis-1/3 flex-1">
-              <Link href="https://github.com/nahommit/ecommerce-backend">
-                <Image
-                  className="rounded-lg object-cover"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  src={web5}
-                  alt="Project 5"
-                />
-              </Link>
-            </div>
-            {/* Project 6 */}
-            <div className="basis-1/3 flex-1">
-              <Link href="https://github.com/nahommit/personal-portfolio">
-                <Image
-                  className="rounded-lg object-cover"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  src={web6}
-                  alt="Project 6"
-                />
-              </Link>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
+              <Image src={consulting} width={100} height={100} alt="Consulting Icon" />
+              <h3 className="text-lg font-medium pt-8 pb-2">Hardware & Electrical</h3>
+              <p className="py-2">Are you interested in real hardware projects? I can give you tips and tricks to level it up.</p>
+              <h4 className="py-4 text-teal-600">Tools I Use</h4>
+              <p className="text-gray-800 py-1">Proteus</p>
+              <p className="text-gray-800 py-1">Matlab</p>
+              <p className="text-gray-800 py-1">Packet Tracer</p>
+              <p className="text-gray-800 py-1">Arduino</p>
             </div>
           </div>
         </section>
-
-        {/* Contact Form Section */}
-        <section id="contact" className="py-10">
-          <h3 className="text-3xl py-1 dark:text-white">Contact Me</h3>
-          <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-            Feel free to reach out through the form below or directly via phone or email.
-          </p>
-
-          <div className="max-w-md mx-auto bg-white dark:bg-gray-800 p-8 shadow-lg rounded-lg">
-            <form onSubmit={sendEmail} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="mt-1 block w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm"
-                  required
+        <section className="py-10">
+          <div>
+            <h3 className="text-3xl py-1 dark:text-white">Projects</h3>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+              Since the beginning of my journey as a developer and in other hardware projects, I have done different projects. Here are some of them.
+            </p>
+            <p>
+              <span className="text-teal-500">Here are some of them:</span>
+            </p>
+          </div>
+          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+            {/* Project 1 */}
+            <div className="basis-1/3 flex-1 relative group shadow-lg rounded-lg overflow-hidden">
+              <h3 className="text-3xl py-1 dark:text-white">Hospital Management System</h3>
+              <div className="relative h-0 pb-[56.25%] overflow-hidden">
+                <Image
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                  layout="fill"
+                  src={web1}
+                  alt="Project 1"
                 />
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="mt-1 block w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm"
-                  required
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                <div className="flex space-x-4">
+                  <Link href="https://github.com/nahom124578/mygit.git">
+                    <button className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                      View Code
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {/* Project 2 */}
+            <div className="basis-1/3 flex-1 relative group shadow-lg rounded-lg overflow-hidden">
+              <h3 className="text-3xl py-1 dark:text-white">EE Project</h3>
+              <div className="relative h-0 pb-[56.25%] overflow-hidden">
+                <Image
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                  layout="fill"
+                  src={web2}
+                  alt="Project 2"
                 />
               </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  className="mt-1 block w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm"
-                  required
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                <div className="flex space-x-4">
+                  <Link href="https://github.com/nahom124578/mygit.git">
+                    <button className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                      View Code
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {/* Project 3 */}
+            <div className="basis-1/3 flex-1 relative group shadow-lg rounded-lg overflow-hidden">
+              <h3 className="text-3xl py-1 dark:text-white">System Design</h3>
+              <div className="relative h-0 pb-[56.25%] overflow-hidden">
+                <Image
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                  layout="fill"
+                  src={web3}
+                  alt="Project 3"
                 />
               </div>
-              <button
-                type="submit"
-                className="w-full bg-teal-600 text-white py-2 rounded-md shadow-md hover:bg-teal-700 transition"
-              >
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                <div className="flex space-x-4">
+                  <Link href="https://github.com/nahom124578/mygit.git">
+                    <button className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                      View Code
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {/* Project 4 */}
+            <div className="basis-1/3 flex-1 relative group shadow-lg rounded-lg overflow-hidden">
+              <h3 className="text-3xl py-1 dark:text-white">Project 4 Title</h3>
+              <div className="relative h-0 pb-[56.25%] overflow-hidden">
+                <Image
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                  layout="fill"
+                  src={web4}
+                  alt="Project 4"
+                />
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                <div className="flex space-x-4">
+                  <Link href="https://github.com/nahom124578/mygit.git">
+                    <button className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                      View Code
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {/* Project 5 */}
+            <div className="basis-1/3 flex-1 relative group shadow-lg rounded-lg overflow-hidden">
+              <h3 className="text-3xl py-1 dark:text-white">E-Commerce Site</h3>
+              <div className="relative h-0 pb-[56.25%] overflow-hidden">
+                <Image
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                  layout="fill"
+                  src={web5}
+                  alt="Project 5"
+                />
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                <div className="flex space-x-4">
+                  <Link href="https://github.com/nahom124578/mygit.git">
+                    <button className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                      View Code
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {/* Project 6 */}
+            <div className="basis-1/3 flex-1 relative group shadow-lg rounded-lg overflow-hidden">
+              <h3 className="text-3xl py-1 dark:text-white">Portfolio Website</h3>
+              <div className="relative h-0 pb-[56.25%] overflow-hidden">
+                <Image
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                  layout="fill"
+                  src={web6}
+                  alt="Project 6"
+                />
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                <div className="flex space-x-4">
+                  <Link href="https://github.com/nahom124578/mygit.git">
+                    <button className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                      View Code
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="py-10">
+            <h3 className="text-3xl py-1 dark:text-white">Contact Me</h3>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full max-w-lg mx-auto">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                className="border border-gray-300 p-2 rounded dark:bg-gray-800 dark:text-white"
+                value={formData.name}
+                onChange={handleChange}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                className="border border-gray-300 p-2 rounded dark:bg-gray-800 dark:text-white"
+                value={formData.email}
+                onChange={handleChange}
+              />
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                required
+                className="border border-gray-300 p-2 rounded dark:bg-gray-800 dark:text-white"
+                rows="4"
+                value={formData.message}
+                onChange={handleChange}
+              ></textarea>
+              <button type="submit" className="bg-teal-500 text-white px-4 py-2 rounded-lg shadow-lg">
                 Send Message
               </button>
             </form>
-
-            <div className="mt-8">
-              <p className="text-gray-700 dark:text-gray-200">
-                Or contact me directly:
-              </p>
-              <p className="text-gray-800 dark:text-gray-300">Phone: +251976166204</p>
-              <p className="text-gray-800 dark:text-gray-300">Email: nahom.mitiku@aait.edu.et</p>
-            </div>
           </div>
         </section>
       </main>
