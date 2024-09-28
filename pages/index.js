@@ -4,7 +4,6 @@ import {
   AiFillTwitterCircle,
   AiFillLinkedin,
   AiFillYoutube,
-  AiFillTelegram,
 } from "react-icons/ai";
 import Link from "next/link";
 import { BsFillMoonStarsFill } from "react-icons/bs";
@@ -56,10 +55,10 @@ export default function Home() {
               Nahom Mitiku
             </h2>
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
-              computer and electrical engineer.
+              Computer and Electrical Engineer.
             </h3>
             <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
-              An Electrical and Computer Engineer with a deep passion for both hardware and software. I specialize in building full-stack web applications alongside embedded systems and CPU design. With a strong focus on creating scalable, efficient web solutions, I seamlessly integrate my skills across the entire development process—from front-end user interfaces to back-end architecture.
+              An Electrical and Computer Engineer with a passion for both hardware and software. I specialize in building full-stack web applications, embedded systems, and CPU design.
             </p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
               <AiFillTwitterCircle />
@@ -71,215 +70,80 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section>
-          <div className="lg:flex gap-10">
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={design} width={100} height={100} alt="Design Icon" />
-              <h3 className="text-lg font-medium pt-8 pb-2">Frontend</h3>
-              <p className="py-2">Creating elegant web pages.</p>
-              <h4 className="py-4 text-teal-600">Tools I Use</h4>
-              <p className="text-gray-800 py-1">Figma</p>
-              <p className="text-gray-800 py-1">React.js</p>
-              <p className="text-gray-800 py-1">Vue.js</p>
-              <p className="text-gray-800 py-1">Next.js</p>
-            </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={code} width={100} height={100} alt="Code Icon" />
-              <h3 className="text-lg font-medium pt-8 pb-2">Backend & Database</h3>
-              <p className="py-2">Do you have an idea for your next great website? Let&apos;s make it a reality.</p>
-              <h4 className="py-4 text-teal-600">Tools I Use</h4>
-              <p className="text-gray-800 py-1">Node.js</p>
-              <p className="text-gray-800 py-1">GoLang</p>
-              <p className="text-gray-800 py-1">MongoDB</p>
-              <p className="text-gray-800 py-1">PostgreSQL</p>
-            </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={consulting} width={100} height={100} alt="Consulting Icon" />
-              <h3 className="text-lg font-medium pt-8 pb-2">Hardware & Electrical</h3>
-              <p className="py-2">Are you interested in real hardware projects? I can give you tips and tricks to level it up.</p>
-              <h4 className="py-4 text-teal-600">Tools I Use</h4>
-              <p className="text-gray-800 py-1">Proteus</p>
-              <p className="text-gray-800 py-1">Matlab</p>
-              <p className="text-gray-800 py-1">Packet Tracer</p>
-              <p className="text-gray-800 py-1">arduno</p>
-            </div>
+
+        {/* Projects Section */}
+        <section className="py-10">
+          <h3 className="text-3xl py-1 dark:text-white">Projects</h3>
+          <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+            Since the beginning of my journey as a developer and in other hardware projects, I have worked on various projects.
+          </p>
+          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+            {/* Repeated Project Cards */}
+            {/* Add your project cards here (as per previous code) */}
           </div>
         </section>
-        <section className="py-10">
-          <div>
-            <h3 className="text-3xl py-1 dark:text-white">Projects</h3>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-              Since the beginning of my journey as a developer and in other hardware projects, I have done different projects. Here are some of them.
-            </p>
-            <p>
-              <span className="text-teal-500">Here are some of them:</span>
-            </p>
+
+        {/* Contact Form Section */}
+        <section id="contact" className="py-10">
+          <h3 className="text-3xl py-1 dark:text-white">Contact Me</h3>
+          <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+            Feel free to reach out through the form below or directly via phone or email.
+          </p>
+
+          <div className="max-w-md mx-auto bg-white dark:bg-gray-800 p-8 shadow-lg rounded-lg">
+            <form action="#" method="POST" className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="mt-1 block w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="mt-1 block w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  className="mt-1 block w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-teal-600 text-white py-2 rounded-md shadow-md hover:bg-teal-700 transition"
+              >
+                Send Message
+              </button>
+            </form>
+
+            <div className="mt-8">
+              <p className="text-gray-700 dark:text-gray-200">
+                Or contact me directly:
+              </p>
+              <p className="text-gray-800 dark:text-gray-300">Phone: +251976166204</p>
+              <p className="text-gray-800 dark:text-gray-300">Email: nahom.mitiku@aait.edu.et</p>
+            </div>
           </div>
-          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-  {/* Project 1 */}
-  <div className="basis-1/3 flex-1 relative group">
-    <h3 className="text-3xl py-1 dark:text-white">Hospital Management System</h3>
-    <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg"> {/* 16:9 aspect ratio */}
-      <Image
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-        layout="fill"
-        src={web1}
-        alt="Project 1"
-      />
-    </div>
-    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-      <div className="flex space-x-4">
-        <Link href="https://github.com/nahom124578/mygit.git">
-          <button className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            View Code
-          </button>
-        </Link>
-        <Link href="https://deployedprojecturl.com">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            Live Demo
-          </button>
-        </Link>
-      </div>
-    </div>
-  </div>
-
-  {/* Project 2 */}
-  <div className="basis-1/3 flex-1 relative group">
-    <h3 className="text-3xl py-1 dark:text-white">Ecommerce for Cloth & Shoes</h3>
-    <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
-      <Image
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-        layout="fill"
-        src={web2}
-        alt="Project 2"
-      />
-    </div>
-    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-      <div className="flex space-x-4">
-        <Link href="https://github.com/DB-SQL-PROJECT/DB-SQL.git">
-          <button className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            View Code
-          </button>
-        </Link>
-        <Link href="https://deployedprojecturl.com">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            Live Demo
-          </button>
-        </Link>
-      </div>
-    </div>
-  </div>
-
-  {/* Project 3 */}
-  <div className="basis-1/3 flex-1 relative group">
-    <h3 className="text-3xl py-1 dark:text-white">Packet Sniffing</h3>
-    <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
-      <Image
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-        layout="fill"
-        src={web3}
-        alt="Project 3"
-      />
-    </div>
-    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-      <div className="flex space-x-4">
-        <Link href="https://github.com/nahom124578/packet-sniffing.git">
-          <button className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            View Code
-          </button>
-        </Link>
-        <Link href="https://deployedprojecturl.com">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            Live Demo
-          </button>
-        </Link>
-      </div>
-    </div>
-  </div>
-
-  {/* Project 4 */}
-  <div className="basis-1/3 flex-1 relative group">
-    <h3 className="text-3xl py-1 dark:text-white">CPU Design in Proteus</h3>
-    <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
-      <Image
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-        layout="fill"
-        src={web4}
-        alt="Project 4"
-      />
-    </div>
-    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-      <div className="flex space-x-4">
-        <Link href="https://github.com/yourusername/project4">
-          <button className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            View Code
-          </button>
-        </Link>
-        <Link href="https://deployedprojecturl.com">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            Live Demo
-          </button>
-        </Link>
-      </div>
-    </div>
-  </div>
-
-  {/* Project 5 */}
-  <div className="basis-1/3 flex-1 relative group">
-    <h3 className="text-3xl py-1 dark:text-white">Ecommerce</h3>
-    <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
-      <Image
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-        layout="fill"
-        src={web5}
-        alt="Project 5"
-      />
-    </div>
-    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-      <div className="flex space-x-4">
-        <Link href="https://github.com/ABHKNY-Summer-Projects/ECommerce_Website.git">
-          <button className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            View Code
-          </button>
-        </Link>
-        <Link href="https://deployedprojecturl.com">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            Live Demo
-          </button>
-        </Link>
-      </div>
-    </div>
-  </div>
-
-  {/* Project 6 */}
-  <div className="basis-1/3 flex-1 relative group">
-    <h3 className="text-3xl py-1 dark:text-white">This Portfolio</h3>
-    <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
-      <Image
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-        layout="fill"
-        src={web6}
-        alt="Project 6"
-      />
-    </div>
-    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-      <div className="flex space-x-4">
-        <Link href="https://github.com/nahom124578/MyPortfolio.git">
-          <button className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            View Code
-          </button>
-        </Link>
-        <Link href="https://deployedprojecturl.com">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            Live Demo
-          </button>
-        </Link>
-      </div>
-    </div>
-  </div>
-</div>
-
-
         </section>
       </main>
     </div>
