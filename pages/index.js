@@ -1,10 +1,8 @@
 import Head from "next/head";
-import resume from "./resume";
 import {
   AiFillTwitterCircle,
   AiFillLinkedin,
   AiFillYoutube,
-  AiFillTelegram,
 } from "react-icons/ai";
 import Link from "next/link";
 import { BsFillMoonStarsFill } from "react-icons/bs";
@@ -20,31 +18,9 @@ import web3 from "../public/sddefault.jpg";
 import web4 from "../public/2066861_96b5_7.jpg";
 import web5 from "../public/ecom.webp";
 import web6 from "../public/port.png";
-import emailjs from "emailjs-com";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(true); // Dark mode default to true
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    emailjs.sendForm('service_lk1lnx2', 'template_your_template_id', e.target, 'user_your_user_id')
-      .then((result) => {
-          alert("Message sent!");
-          setFormData({ name: '', email: '', message: '' }); // Reset form
-      }, (error) => {
-          alert("Error sending message: ", error.text);
-      });
-  };
+  const [darkMode, setDarkMode] = useState(true);
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -84,9 +60,15 @@ export default function Home() {
               An Electrical and Computer Engineer with a deep passion for both hardware and software. I specialize in building full-stack web applications alongside embedded systems and CPU design. With a strong focus on creating scalable, efficient web solutions, I seamlessly integrate my skills across the entire development process—from front-end user interfaces to back-end architecture.
             </p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-              <AiFillTwitterCircle />
-              <AiFillLinkedin />
-              <AiFillYoutube />
+              <Link href="https://twitter.com/yourusername">
+                <AiFillTwitterCircle />
+              </Link>
+              <Link href="https://www.linkedin.com/in/yourusername">
+                <AiFillLinkedin />
+              </Link>
+              <Link href="https://www.youtube.com/channel/yourchannel">
+                <AiFillYoutube />
+              </Link>
             </div>
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
               <Image src={deved} layout="fill" objectFit="cover" alt="Developer Image" />
@@ -108,7 +90,7 @@ export default function Home() {
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
               <Image src={code} width={100} height={100} alt="Code Icon" />
               <h3 className="text-lg font-medium pt-8 pb-2">Backend & Database</h3>
-              <p className="py-2">Do you have an idea for your next great website? Let&apos;s make it a reality.</p>
+              <p className="py-2">Do you have an idea for your next great website? Let's make it a reality.</p>
               <h4 className="py-4 text-teal-600">Tools I Use</h4>
               <p className="text-gray-800 py-1">Node.js</p>
               <p className="text-gray-800 py-1">GoLang</p>
@@ -139,9 +121,9 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
             {/* Project 1 */}
-            <div className="basis-1/3 flex-1 relative group shadow-lg rounded-lg overflow-hidden">
+            <div className="basis-1/3 flex-1 relative group shadow-lg">
               <h3 className="text-3xl py-1 dark:text-white">Hospital Management System</h3>
-              <div className="relative h-0 pb-[56.25%] overflow-hidden">
+              <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
                 <Image
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                   layout="fill"
@@ -156,13 +138,19 @@ export default function Home() {
                       View Code
                     </button>
                   </Link>
+                  <Link href="https://your-live-demo-url.com">
+                    <button className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                      Live Demo
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
+
             {/* Project 2 */}
-            <div className="basis-1/3 flex-1 relative group shadow-lg rounded-lg overflow-hidden">
-              <h3 className="text-3xl py-1 dark:text-white">EE Project</h3>
-              <div className="relative h-0 pb-[56.25%] overflow-hidden">
+            <div className="basis-1/3 flex-1 relative group shadow-lg">
+              <h3 className="text-3xl py-1 dark:text-white">Ecommerce for Cloth & Shoes</h3>
+              <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
                 <Image
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                   layout="fill"
@@ -177,13 +165,19 @@ export default function Home() {
                       View Code
                     </button>
                   </Link>
+                  <Link href="https://your-live-demo-url.com">
+                    <button className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                      Live Demo
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
+
             {/* Project 3 */}
-            <div className="basis-1/3 flex-1 relative group shadow-lg rounded-lg overflow-hidden">
-              <h3 className="text-3xl py-1 dark:text-white">System Design</h3>
-              <div className="relative h-0 pb-[56.25%] overflow-hidden">
+            <div className="basis-1/3 flex-1 relative group shadow-lg">
+              <h3 className="text-3xl py-1 dark:text-white">Design Engineering System</h3>
+              <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
                 <Image
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                   layout="fill"
@@ -198,13 +192,19 @@ export default function Home() {
                       View Code
                     </button>
                   </Link>
+                  <Link href="https://your-live-demo-url.com">
+                    <button className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                      Live Demo
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
+
             {/* Project 4 */}
-            <div className="basis-1/3 flex-1 relative group shadow-lg rounded-lg overflow-hidden">
-              <h3 className="text-3xl py-1 dark:text-white">Project 4 Title</h3>
-              <div className="relative h-0 pb-[56.25%] overflow-hidden">
+            <div className="basis-1/3 flex-1 relative group shadow-lg">
+              <h3 className="text-3xl py-1 dark:text-white">Communication Management</h3>
+              <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
                 <Image
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                   layout="fill"
@@ -219,13 +219,19 @@ export default function Home() {
                       View Code
                     </button>
                   </Link>
+                  <Link href="https://your-live-demo-url.com">
+                    <button className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                      Live Demo
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
+
             {/* Project 5 */}
-            <div className="basis-1/3 flex-1 relative group shadow-lg rounded-lg overflow-hidden">
-              <h3 className="text-3xl py-1 dark:text-white">E-Commerce Site</h3>
-              <div className="relative h-0 pb-[56.25%] overflow-hidden">
+            <div className="basis-1/3 flex-1 relative group shadow-lg">
+              <h3 className="text-3xl py-1 dark:text-white">Embedded System Project</h3>
+              <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
                 <Image
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                   layout="fill"
@@ -240,13 +246,19 @@ export default function Home() {
                       View Code
                     </button>
                   </Link>
+                  <Link href="https://your-live-demo-url.com">
+                    <button className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                      Live Demo
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
+
             {/* Project 6 */}
-            <div className="basis-1/3 flex-1 relative group shadow-lg rounded-lg overflow-hidden">
-              <h3 className="text-3xl py-1 dark:text-white">Portfolio Website</h3>
-              <div className="relative h-0 pb-[56.25%] overflow-hidden">
+            <div className="basis-1/3 flex-1 relative group shadow-lg">
+              <h3 className="text-3xl py-1 dark:text-white">My Portfolio Website</h3>
+              <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
                 <Image
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                   layout="fill"
@@ -261,46 +273,67 @@ export default function Home() {
                       View Code
                     </button>
                   </Link>
+                  <Link href="https://your-live-demo-url.com">
+                    <button className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                      Live Demo
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </section>
+
+        {/* Contact Me Section */}
         <section>
-          <div className="py-10">
-            <h3 className="text-3xl py-1 dark:text-white">Contact Me</h3>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full max-w-lg mx-auto">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                required
-                className="border border-gray-300 p-2 rounded dark:bg-gray-800 dark:text-white"
-                value={formData.name}
-                onChange={handleChange}
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-                className="border border-gray-300 p-2 rounded dark:bg-gray-800 dark:text-white"
-                value={formData.email}
-                onChange={handleChange}
-              />
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                required
-                className="border border-gray-300 p-2 rounded dark:bg-gray-800 dark:text-white"
-                rows="4"
-                value={formData.message}
-                onChange={handleChange}
-              ></textarea>
-              <button type="submit" className="bg-teal-500 text-white px-4 py-2 rounded-lg shadow-lg">
-                Send Message
-              </button>
-            </form>
+          <div className="bg-gradient-to-b from-teal-500 p-10 rounded-lg shadow-lg">
+            <h3 className="text-4xl py-1 text-white">Contact Me</h3>
+            <p className="text-lg text-white py-2">
+              You can contact me via email or phone for any inquiries. I am also active on social media.
+            </p>
+            <div className="flex flex-col items-start space-y-4 mt-5">
+              {/* Email */}
+              <p className="text-white">
+                Email:{" "}
+                <a
+                  href="mailto:nahom.mitiku@aait.edu.et"
+                  className="text-yellow-300 underline hover:text-yellow-500"
+                >
+                  nahom.mitiku@aait.edu.et
+                </a>
+              </p>
+
+              {/* Phone */}
+              <p className="text-white">Phone: <span className="text-yellow-300">+251976166204</span></p>
+
+              {/* Social Media */}
+              <div className="flex space-x-4">
+                <a
+                  href="https://twitter.com/yourusername"
+                  className="text-white hover:text-gray-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AiFillTwitterCircle size={40} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/yourusername"
+                  className="text-white hover:text-gray-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AiFillLinkedin size={40} />
+                </a>
+                <a
+                  href="https://www.youtube.com/channel/yourchannel"
+                  className="text-white hover:text-gray-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AiFillYoutube size={40} />
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </main>
