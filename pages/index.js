@@ -8,10 +8,8 @@ import {
 import Link from "next/link";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState } from "react";
+import emailjs from "emailjs-com";
 import deved from "../public/dev-ed-wave.jpg";
-import code from "../public/code.png";
-import design from "../public/design.png";
-import consulting from "../public/consulting.png";
 import Image from "next/image";
 import web1 from "../public/system-accessed-by-doctors-fingerprint-260nw-2291512001.webp";
 import web2 from "../public/eee.jpg";
@@ -22,6 +20,29 @@ import web6 from "../public/port.png";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+
+  // Contact form submission handler
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID", // Replace with your EmailJS Service ID
+        "YOUR_TEMPLATE_ID", // Replace with your EmailJS Template ID
+        e.target,
+        "YOUR_USER_ID" // Replace with your EmailJS User ID
+      )
+      .then(
+        (result) => {
+          alert("Message sent successfully!");
+        },
+        (error) => {
+          alert("Failed to send the message, please try again.");
+        }
+      );
+
+    e.target.reset();
+  };
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -75,11 +96,87 @@ export default function Home() {
         <section className="py-10">
           <h3 className="text-3xl py-1 dark:text-white">Projects</h3>
           <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-            Since the beginning of my journey as a developer and in other hardware projects, I have worked on various projects.
+            I have worked on a variety of projects, from embedded systems to web applications. Below are some of my notable works.
           </p>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            {/* Repeated Project Cards */}
-            {/* Add your project cards here (as per previous code) */}
+            {/* Project 1 */}
+            <div className="basis-1/3 flex-1">
+              <Link href="https://github.com/nahommit/cpu-project">
+                <Image
+                  className="rounded-lg object-cover"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive"
+                  src={web1}
+                  alt="Project 1"
+                />
+              </Link>
+            </div>
+            {/* Project 2 */}
+            <div className="basis-1/3 flex-1">
+              <Link href="https://github.com/nahommit/embedded-systems-project">
+                <Image
+                  className="rounded-lg object-cover"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive"
+                  src={web2}
+                  alt="Project 2"
+                />
+              </Link>
+            </div>
+            {/* Project 3 */}
+            <div className="basis-1/3 flex-1">
+              <Link href="https://github.com/nahommit/security-project">
+                <Image
+                  className="rounded-lg object-cover"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive"
+                  src={web3}
+                  alt="Project 3"
+                />
+              </Link>
+            </div>
+            {/* Project 4 */}
+            <div className="basis-1/3 flex-1">
+              <Link href="https://github.com/nahommit/e-commerce-app">
+                <Image
+                  className="rounded-lg object-cover"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive"
+                  src={web4}
+                  alt="Project 4"
+                />
+              </Link>
+            </div>
+            {/* Project 5 */}
+            <div className="basis-1/3 flex-1">
+              <Link href="https://github.com/nahommit/ecommerce-backend">
+                <Image
+                  className="rounded-lg object-cover"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive"
+                  src={web5}
+                  alt="Project 5"
+                />
+              </Link>
+            </div>
+            {/* Project 6 */}
+            <div className="basis-1/3 flex-1">
+              <Link href="https://github.com/nahommit/personal-portfolio">
+                <Image
+                  className="rounded-lg object-cover"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive"
+                  src={web6}
+                  alt="Project 6"
+                />
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -91,7 +188,7 @@ export default function Home() {
           </p>
 
           <div className="max-w-md mx-auto bg-white dark:bg-gray-800 p-8 shadow-lg rounded-lg">
-            <form action="#" method="POST" className="space-y-4">
+            <form onSubmit={sendEmail} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                   Name
