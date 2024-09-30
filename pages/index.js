@@ -17,7 +17,7 @@ import web5 from "../public/ecom.webp";
 import web6 from "../public/port.png";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   // Refs for scrolling
   const projectsRef = useRef(null);
@@ -84,7 +84,7 @@ export default function Home() {
               <Link href="https://www.youtube.com/channel/yourchannel">
                 <AiFillYoutube />
               </Link>
-            </div>
+              </div>
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
               <Image src={deved} layout="fill" objectFit="cover" alt="Developer Image" />
             </div>
@@ -98,7 +98,8 @@ export default function Home() {
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
               Since the beginning of my journey as a developer and in other hardware projects, I have done different projects. Here are some of them.
             </p>
-          </div><div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+          </div>
+          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
             {/* Project 1 */}
             <div className="basis-1/3 flex-1 relative group shadow-lg">
               <h3 className="text-3xl py-1 dark:text-white">Hospital Management System</h3>
@@ -182,7 +183,7 @@ export default function Home() {
 
             {/* Project 4 */}
             <div className="basis-1/3 flex-1 relative group shadow-lg">
-              <h3 className="text-3xl py-1 dark:text-white">Communication Management</h3>
+              <h3 className="text-3xl py-1 dark:text-white">Engineering Mini Project</h3>
               <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
                 <Image
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
@@ -209,7 +210,7 @@ export default function Home() {
 
             {/* Project 5 */}
             <div className="basis-1/3 flex-1 relative group shadow-lg">
-              <h3 className="text-3xl py-1 dark:text-white">Embedded System Project</h3>
+              <h3 className="text-3xl py-1 dark:text-white">Online Shopping System</h3>
               <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
                 <Image
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
@@ -236,7 +237,7 @@ export default function Home() {
 
             {/* Project 6 */}
             <div className="basis-1/3 flex-1 relative group shadow-lg">
-              <h3 className="text-3xl py-1 dark:text-white">My Portfolio Website</h3>
+              <h3 className="text-3xl py-1 dark:text-white">Portfolio</h3>
               <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
                 <Image
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
@@ -264,7 +265,7 @@ export default function Home() {
         </section>
 
         {/* Contact Me Section */}
-        <section ref={contactRef}>
+         <section ref={contactRef}>
           <div className="bg-gradient-to-b from-teal-300 p-10 rounded-lg shadow-lg">
             <h3 className="text-4xl py-1 text-black">Contact Me</h3>
             <p className="text-lg text-black py-2">
