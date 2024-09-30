@@ -6,11 +6,8 @@ import {
 } from "react-icons/ai";
 import Link from "next/link";
 import { BsFillMoonStarsFill } from "react-icons/bs";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import deved from "../public/dev-ed-wave.jpg";
-import code from "../public/code.png";
-import design from "../public/design.png";
-import consulting from "../public/consulting.png";
 import Image from "next/image";
 import web1 from "../public/system-accessed-by-doctors-fingerprint-260nw-2291512001.webp";
 import web2 from "../public/eee.jpg";
@@ -21,6 +18,14 @@ import web6 from "../public/port.png";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
+
+  // Refs for scrolling
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const scrollToSection = (ref) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -41,14 +46,24 @@ export default function Home() {
                 />
               </li>
               <li>
-                <Link href="/resume">
-                  <h1 className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8">
-                    Resume
-                  </h1>
-                </Link>
+                <button
+                  onClick={() => scrollToSection(projectsRef)}
+                  className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
+                >
+                  Projects
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection(contactRef)}
+                  className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
+                >
+                  Contact Me
+                </button>
               </li>
             </ul>
           </nav>
+
           <div className="text-center p-10 py-10">
             <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
               Nahom Mitiku
@@ -60,10 +75,10 @@ export default function Home() {
               An Electrical and Computer Engineer with a deep passion for both hardware and software. I specialize in building full-stack web applications alongside embedded systems and CPU design. With a strong focus on creating scalable, efficient web solutions, I seamlessly integrate my skills across the entire development process—from front-end user interfaces to back-end architecture.
             </p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-              <Link href="https://twitter.com/yourusername">
+              <Link href="https://x.com/NahomMitiku12">
                 <AiFillTwitterCircle />
               </Link>
-              <Link href="https://www.linkedin.com/in/yourusername">
+              <Link href="https://www.linkedin.com/in/nahom-mitiku-5bb642245/">
                 <AiFillLinkedin />
               </Link>
               <Link href="https://www.youtube.com/channel/yourchannel">
@@ -75,51 +90,15 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section>
-          <div className="lg:flex gap-10">
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={design} width={100} height={100} alt="Design Icon" />
-              <h3 className="text-lg font-medium pt-8 pb-2">Frontend</h3>
-              <p className="py-2">Creating elegant web pages.</p>
-              <h4 className="py-4 text-teal-600">Tools I Use</h4>
-              <p className="text-gray-800 py-1">Figma</p>
-              <p className="text-gray-800 py-1">React.js</p>
-              <p className="text-gray-800 py-1">Vue.js</p>
-              <p className="text-gray-800 py-1">Next.js</p>
-            </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={code} width={100} height={100} alt="Code Icon" />
-              <h3 className="text-lg font-medium pt-8 pb-2">Backend & Database</h3>
-              <p className="py-2">Do you have an idea for your next great website? Let's make it a reality.</p>
-              <h4 className="py-4 text-teal-600">Tools I Use</h4>
-              <p className="text-gray-800 py-1">Node.js</p>
-              <p className="text-gray-800 py-1">GoLang</p>
-              <p className="text-gray-800 py-1">MongoDB</p>
-              <p className="text-gray-800 py-1">PostgreSQL</p>
-            </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={consulting} width={100} height={100} alt="Consulting Icon" />
-              <h3 className="text-lg font-medium pt-8 pb-2">Hardware & Electrical</h3>
-              <p className="py-2">Are you interested in real hardware projects? I can give you tips and tricks to level it up.</p>
-              <h4 className="py-4 text-teal-600">Tools I Use</h4>
-              <p className="text-gray-800 py-1">Proteus</p>
-              <p className="text-gray-800 py-1">Matlab</p>
-              <p className="text-gray-800 py-1">Packet Tracer</p>
-              <p className="text-gray-800 py-1">Arduino</p>
-            </div>
-          </div>
-        </section>
-        <section className="py-10">
+
+        {/* Projects Section */}
+        <section ref={projectsRef} className="py-10">
           <div>
             <h3 className="text-3xl py-1 dark:text-white">Projects</h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
               Since the beginning of my journey as a developer and in other hardware projects, I have done different projects. Here are some of them.
             </p>
-            <p>
-              <span className="text-teal-500">Here are some of them:</span>
-            </p>
-          </div>
-          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+          </div><div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
             {/* Project 1 */}
             <div className="basis-1/3 flex-1 relative group shadow-lg">
               <h3 className="text-3xl py-1 dark:text-white">Hospital Management System</h3>
@@ -285,40 +264,40 @@ export default function Home() {
         </section>
 
         {/* Contact Me Section */}
-        <section>
-          <div className="bg-gradient-to-b from-teal-500 p-10 rounded-lg shadow-lg">
-            <h3 className="text-4xl py-1 text-white">Contact Me</h3>
-            <p className="text-lg text-white py-2">
+        <section ref={contactRef}>
+          <div className="bg-gradient-to-b from-teal-300 p-10 rounded-lg shadow-lg">
+            <h3 className="text-4xl py-1 text-black">Contact Me</h3>
+            <p className="text-lg text-black py-2">
               You can contact me via email or phone for any inquiries. I am also active on social media.
             </p>
             <div className="flex flex-col items-start space-y-4 mt-5">
               {/* Email */}
-              <p className="text-white">
+              <p className="text-black">
                 Email:{" "}
                 <a
                   href="mailto:nahom.mitiku@aait.edu.et"
-                  className="text-yellow-300 underline hover:text-yellow-500"
+                  className="text-yellow-500 underline hover:text-red-500"
                 >
                   nahom.mitiku@aait.edu.et
                 </a>
               </p>
 
               {/* Phone */}
-              <p className="text-white">Phone: <span className="text-yellow-300">+251976166204</span></p>
+              <p className="text-black">Phone: <span className="text-yellow-500">+251976166204</span></p>
 
               {/* Social Media */}
               <div className="flex space-x-4">
                 <a
-                  href="https://twitter.com/yourusername"
-                  className="text-white hover:text-gray-300"
+                  href="https://x.com/NahomMitiku12"
+                  className="text-black hover:text-gray-300"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <AiFillTwitterCircle size={40} />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/yourusername"
-                  className="text-white hover:text-gray-300"
+                  href="https://www.linkedin.com/in/nahom-mitiku-5bb642245/"
+                  className="text-black hover:text-gray-300"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -326,7 +305,7 @@ export default function Home() {
                 </a>
                 <a
                   href="https://www.youtube.com/channel/yourchannel"
-                  className="text-white hover:text-gray-300"
+                  className="text-black hover:text-gray-300"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
