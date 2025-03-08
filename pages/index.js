@@ -9,7 +9,7 @@ import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState, useRef } from "react";
 import deved from "../public/dev-ed-wave.jpg";
 import Image from "next/image";
-import web1 from "../public/system-accessed-by-doctors-fingerprint-260nw-2291512001.webp";
+import web1 from "../public/ddd.png";
 import web2 from "../public/eee.jpg";
 import web3 from "../public/sddefault.jpg";
 import web4 from "../public/2066861_96b5_7.jpg";
@@ -102,7 +102,7 @@ export default function Home() {
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
             {/* Project 1 */}
             <div className="basis-1/3 flex-1 relative group shadow-lg">
-              <h3 className="text-3xl py-1 dark:text-white">Hospital Management System</h3>
+              <h3 className="text-3xl py-1 dark:text-white">Roha Coffe Export</h3>
               <div className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
                 <Image
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
@@ -113,12 +113,12 @@ export default function Home() {
               </div>
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
                 <div className="flex space-x-4">
-                  <Link href="https://github.com/nahom124578/mygit.git">
+                  <Link href="https://github.com/nahom124578/roha_coffee.git">
                     <button className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
                       View Code
                     </button>
                   </Link>
-                  <Link href="https://your-live-demo-url.com">
+                  <Link href="https://roha.dev.awura.tech/">
                     <button className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-105">
                       Live Demo
                     </button>
